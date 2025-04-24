@@ -12,10 +12,12 @@ import { COLORS } from "../helpers/colors.ts";
 
 class DatabaseConnection {
   private static instance: DatabaseConnection;
-  private connected: boolean = false;
+  private connected: boolean;
 
   // Constructor privado para evitar instancias directas
-  private constructor() {}
+  private constructor() {
+    this.connected = false;
+  }
 
   // Método estático para obtener la instancia única
   public static getInstance(): DatabaseConnection {
